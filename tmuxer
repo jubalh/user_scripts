@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+SESSION_NAME=std
+
+#window 1
+tmux new-session -s $SESSION_NAME -n editor -d
+tmux send-keys -t $SESSION_NAME 'vim +NERDTree' C-m
+tmux split-window -v -p 10 -t $SESSION_NAME
+tmux select-pane -U
+
+#window 2
+#tmux new-window -n irc
+#tmux send-keys -t $SESSION_NAME 'irssi' C-m
